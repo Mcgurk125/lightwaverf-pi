@@ -47,7 +47,9 @@ int main(int argc, char *argv[]) //argc is the number of arguments passed in, ./
         {
                 strcpy(id, argv[1]); // set id to arg 1
                 unit = atoi(argv[2]); //set the unit number
-                command = atoi(argv[3]); // set the command on/off
+                char idChar = argv[3][0]; //take the first character of the third argument
+                char singleChar[2] = {idChar, 0};
+                command = (int)strtol(singleChar, NULL, 16);
         }
         else if (argc == 2)
         {
